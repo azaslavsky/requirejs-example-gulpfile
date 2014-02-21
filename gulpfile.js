@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var rjs = require('requirejs');
 
 gulp.task('build', function(cb){
-  console.log(rjs.optimize({
+  rjs.optimize({
     appDir: 'www',
     baseUrl: 'js/lib',
     paths: {
@@ -50,7 +50,7 @@ gulp.task('build', function(cb){
   }, function(buildResponse){
     // console.log('build response', buildResponse);
     cb();
-  }, cb));
+  }, cb);
 });
 
 gulp.task('default', ['build']);
